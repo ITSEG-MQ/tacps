@@ -173,3 +173,44 @@ footer{font-size:0.875em; margin-top:12em; text-align:center;}
     table.footer{font-size:0.33em;}
 }
 
+/* 下拉菜单 for Archive */
+td.navigation.dropdown { position: relative; }
+
+td.navigation.dropdown > a,
+td.navigation.dropdown > span {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;               /* 放在导航按钮正下方 */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fafafa;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border: 1px solid #ddd;
+  z-index: 1000;
+  padding: 6px 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 8px 14px;
+  color: #505050;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 0.95em;
+}
+
+.dropdown-content a:hover {
+  background-color: #eee;
+}
+
+/* 悬停或键盘聚焦时展开（兼容无鼠标操作） */
+td.dropdown:hover .dropdown-content,
+td.dropdown:focus-within .dropdown-content {
+  display: block;
+}
