@@ -81,8 +81,8 @@ th,td{
     position: relative;
     width: 100%;
     height: 300px; /* 控制 Banner 高度，可调 */
-    background-image: url('Cover_img.jpg');
-/*     background-image: url('{{ site.baseurl }}/assets/Cover_img.jpg'); */
+    background-image: url('banner.jpg');
+/*     background-image: url('{{ site.baseurl }}/assets/banner.jpg'); */
     background-size: cover;
     background-position: center;
     font-family:'Roboto Slab',serif;
