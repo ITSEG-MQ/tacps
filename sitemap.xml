@@ -11,7 +11,10 @@
        <loc>WEBSITE/program</loc>
    </url>
    <url>
-       <loc>WEBSITE/directions</loc>
+       <loc>WEBSITE/venue</loc>
+   </url>
+    <url>
+       <loc>WEBSITE/archive</loc>
    </url>
 </urlset> 
 
