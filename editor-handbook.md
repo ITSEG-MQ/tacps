@@ -8,7 +8,8 @@ This is the handbook for the editors, please go through the whole handbook (not 
 Following is the tree of files in this repo, please check the notes for each file to have the understanding of how the purposes of each file.
 ```text
 .
-├── _config.yml (config file for the website, contact maintainer for editing)
+├── _config_prod.yml (config file for the production deployment, do not edit)
+├── _config.yml (config file for the github page deployment, do not edit)
 ├── _includes (website structure, contact maintainer for editing)
 │   ├── footer.html
 │   └── header.html
