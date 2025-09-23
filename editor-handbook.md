@@ -19,10 +19,13 @@ Following is the tree of files in this repo, please check the notes for each fil
 │   └── 2025-jul
 │       └── index.html
 ├── assets (reusable resources directory)
-│   ├── banner-large.jpg
-│   ├── banner.jpg
-│   ├── favicon.png
-│   └── main.css (website structure, contact maintainer for editing)
+│   ├── css (website structure, contact maintainer for editing)
+│   │   ├── extra.scss
+│   │   └── main.css
+│   └── pic (reusable pictures)
+│       ├── banner-large.jpg
+│       ├── banner.jpg
+│       └── favicon.png
 ├── editor-handbook.md (this file)
 ├── index.html (homepage directory)
 ├── LICENSE (do not edit)
@@ -31,7 +34,6 @@ Following is the tree of files in this repo, please check the notes for each fil
 ├── README.md (repo README)
 ├── registration (registration directory)
 │   └── index.html (webpage)
-├── sitemap.xml (sitemap file for SEO, contact maintainer for editing)
 └── venue (venue directory)
     └── index.html (webpage)
 ```
