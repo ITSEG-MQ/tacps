@@ -20,23 +20,23 @@
 <table class="navigation">
   <tr>
     <td class="navigation">
-      <a href="{{ site.baseurl }}/" class="{% if page.nav == 'home' %}current{% endif %}">Home</a>
+      <a href="{{ '/' | relative_url }}" class="{% if page.nav == 'home' %}current{% endif %}">Home</a>
     </td>
     <td class="navigation">
-      <a href="{{ site.baseurl }}/registration/" class="{% if page.nav == 'registration' %}current{% endif %}">Registration</a>
+      <a href="{{ '/registration/' | relative_url }}" class="{% if page.nav == 'registration' %}current{% endif %}">Registration</a>
     </td>
     <td class="navigation">
-      <a href="{{ site.baseurl }}/program/" class="{% if page.nav == 'program' %}current{% endif %}">Program</a>
+      <a href="{{ '/venue/' | relative_url }}" class="{% if page.nav == 'program' %}current{% endif %}">Program</a>
     </td>
     <td class="navigation">
-      <a href="{{ site.baseurl }}/venue/" class="{% if page.nav == 'venue' %}current{% endif %}">Venue</a>
+      <a href="{{ '/venue/' | relative_url }}" class="{% if page.nav == 'venue' %}current{% endif %}">Venue</a>
     </td>
     <td class="navigation dropdown">
-      <a href="{{ site.baseurl }}/archive/" class="{% if page.nav == 'archive' %}current{% endif %}">Archive</a>
+      <a href="{{ '/archive/' | relative_url }}" class="{% if page.nav == 'archive' %}current{% endif %}">Archive</a>
       <div class="dropdown-content">
-        <a href="{{ site.baseurl }}/archive/2025-jul/">TACPS 2025 Jul</a>
-        <a href="{{ site.baseurl }}/archive/2024-oct/">TACPS 2024 Oct</a>
-        <a href="{{ site.baseurl }}/archive/2024-jan/">TACPS 2024 Jan</a>
+        <a href="{{ '/archive/2025-jul/' | relative_url }}">TACPS 2025 Jul</a>
+        <a href="{{ '/archive/2024-oct/' | relative_url }}">TACPS 2024 Oct</a>
+        <a href="{{ '/archive/2024-jan/' | relative_url }}">TACPS 2024 Jan</a>
       </div>
     </td>
   </tr>
