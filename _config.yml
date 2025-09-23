@@ -1,2 +1,5 @@
+
 title: "TACPS"
-baseurl: "/tacps"    # site lives at /tacps
+url: "https://itseg-mq.github.io" # GH Pages root
+baseurl: "/tacps"                 # repo name
+environment: "staging"            # env name
