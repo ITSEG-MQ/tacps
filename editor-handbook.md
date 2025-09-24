@@ -61,8 +61,9 @@ The website is still in construction, thus the layout might be imperfect, we are
 
 ## Local Testing
 
-This is a TL;DR from [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll).
+Please check [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll) for detailed instructions.
 
+TL;DR:
 1. First install [Jekyll](https://jekyllrb.com/docs/installation/)
 2. Open terminal and switch working directory to this repo.
 3. use ```jekyll serve --baseurl=""``` to start the local deployment, 
