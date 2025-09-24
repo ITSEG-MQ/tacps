@@ -1,0 +1,43 @@
+name: Build & Publish Release (site.zip)
+
+on:
+  push:
+    branches: [ "main" ]     # change if you deploy from another branch
+  workflow_dispatch:         # allow manual runs
+
+permissions:
+  contents: write            # needed to create releases
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Install deps
+        run: bundle install
+
+      - name: Build (prod)
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --config _config.yml,_config_prod.yml --destination _site
+
+      - name: Zip site
+        run: |
+          cd _site
+          zip -rq ../site.zip .
+          cd ..
+
+      - name: Create GitHub Release + upload asset
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: deploy-${{ github.sha }}
+          name: Deploy ${{ github.sha }}
+          draft: false
+          prerelease: false
+          files: site.zip
