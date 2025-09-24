@@ -78,4 +78,4 @@ Currently we are deploying a 2-stage website deployment:
 
 The GitHub Pages can provide a quick look on the result.
 
-The self-hosted one has Cloudflare caching for faster access around the world, it will check on github page update every 10 min and deploy update automatically if any. 
+The self-hosted one has Cloudflare caching for faster access around the world, it will check on github page update every 1 min and deploy update automatically if any. 
