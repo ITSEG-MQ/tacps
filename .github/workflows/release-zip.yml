@@ -1,48 +1,42 @@
-name: Build & Publish site.zip (Release)
+name: Package Jekyll to Single Rolling Zip Release
 
 on:
   push:
-    branches: ["main"]          # adjust if needed
+    branches: ["main"]          # change if you deploy from another branch
   workflow_dispatch:
 
 permissions:
-  contents: write               # needed to create releases
+  contents: write               # required to create/update releases
 
 jobs:
-  build:
+  build-and-release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      # Build using GitHub Pages' preinstalled Jekyll toolchain
+      - name: Build with Jekyll (Pages deps)
+        uses: actions/jekyll-build-pages@v1
         with:
-          ruby-version: '3.1'            # matches your existing workflow
-          bundler-cache: true
-
-      - name: Build with Jekyll (prod)
+          source: ./
+          destination: ./_site
         env:
           JEKYLL_ENV: production
-        run: |
-          # If you have _config_prod.yml, merge it here; otherwise remove the --config bit.
-          if [ -f "_config_prod.yml" ]; then
-            bundle exec jekyll build --config _config.yml,_config_prod.yml --destination _site
-          else
-            bundle exec jekyll build --destination _site
-          fi
 
-      - name: Zip _site -> site.zip
+      - name: Zip site
         run: |
           cd _site
           zip -rq ../site.zip .
           cd ..
 
-      - name: Create GitHub Release and upload site.zip
+      - name: Create/Update single 'prod' release and upload site.zip
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: deploy-${{ github.sha }}   # unique tag per build
-          name: Deploy ${{ github.sha }}
+          tag_name: prod                   # single rolling tag
+          name: Production Build           # release name
           draft: false
           prerelease: false
+          make_latest: true                # mark as latest
+          replace_assets: true             # overwrite existing site.zip
           files: site.zip
