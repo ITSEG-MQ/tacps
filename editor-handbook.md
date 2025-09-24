@@ -73,8 +73,8 @@ As the local one is updating in real-time, you can edit,save and refresh the web
 ## Website Deployment
 Currently we are deploying a 2-stage website deployment:
 1. [itseg-mq.github.io/tacps](https://itseg-mq.github.io/tacps)  for staging, hosted by GitHub Pages
-2. [tacps.org](https://tacps.org) for production, self-hosted (online very soon, ETA 3 days)
+2. [tacps.org](https://tacps.org) for production, self-hosted
 
-GitHub Pages can provide a quick look on the result, while the self-hosted one has Cloudflare caching for faster access around the world. 
+The GitHub Pages can provide a quick look on the result.
 
-The automated deployment to production is almost done, before that please only check the first one to see the result. 
+The self-hosted one has Cloudflare caching for faster access around the world, it will check on github page update every 10 min and deploy update automatically if any. 
